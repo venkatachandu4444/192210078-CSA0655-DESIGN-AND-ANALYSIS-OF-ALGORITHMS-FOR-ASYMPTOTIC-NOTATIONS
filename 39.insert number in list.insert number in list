@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void insert(int arr[], int n, int pos, int num) {
+    for (int i = n; i >= pos; i--)
+        arr[i+1] = arr[i];
+    arr[pos] = num;
+}
+
+int main() {
+    int n = 5, pos, num;
+    int arr[10] = {1, 2, 3, 4, 5};
+    printf("Enter position and number to insert: ");
+    scanf("%d %d", &pos, &num);
+    insert(arr, n, pos, num);
+    n++;
+    printf("Updated list: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
